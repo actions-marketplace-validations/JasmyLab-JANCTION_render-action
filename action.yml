@@ -17,11 +17,11 @@ inputs:
     required: false
     default: preview
   frames:
-    description: "Preview: 1, 1-24 or 1,8,16 (up to 4 frames). Final: a range such as 1-48 (at most 240 per job)."
+    description: "Preview: 1, 1-24 or 1,8,16 (up to 4 frames). Final: a range such as 1-48 (up to 3,000 frames per job, rendered in parts of 240)."
     required: false
     default: "1"
   width:
-    description: Width in pixels (final up to 1920x1080; previews keep the aspect ratio within 1280x720).
+    description: Width in pixels (final up to 1920x1080 on free time and 3840x2160 with prepaid credit; previews keep the aspect ratio within 1280x720).
     required: false
     default: "1280"
   height:
@@ -55,7 +55,7 @@ inputs:
   cli-version:
     description: Version of the janction-render package on PyPI to use.
     required: false
-    default: "0.4.41"
+    default: "0.4.162"
   server:
     description: Service URL.
     required: false

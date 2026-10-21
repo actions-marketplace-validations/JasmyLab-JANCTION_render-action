@@ -59,6 +59,7 @@ BIN="$VENV/bin"
 [ -d "$VENV/Scripts" ] && BIN="$VENV/Scripts"
 SPEC="${JANCTION_RENDER_ACTION_PIP_SPEC:-janction-render==${JR_IN_CLI_VERSION}}"   # the override is for testing this action
 "$BIN/python" -m pip install --disable-pip-version-check --quiet "$SPEC" || fail "could not install $SPEC"
+export PYTHONUTF8=1 PYTHONIOENCODING=utf-8   # Windows runners: the JSON the CLI writes must be UTF-8 for field() to read it
 export JANCTION_RENDER_API_KEY="${JR_IN_API_KEY}"
 export JANCTION_RENDER_SERVER="${JR_IN_SERVER}"
 export JANCTION_RENDER_CLIENT="${JANCTION_RENDER_CLIENT:-github-action}"
