@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: JasmyLab-JANCTION/render-action@v1
+      - uses: JasmyLab-JANCTION/render-janction@v1
         id: render
         with:
           api-key: ${{ secrets.JANCTION_RENDER_API_KEY }}
@@ -41,7 +41,7 @@ jobs:
 A final MP4 on release:
 
 ```yaml
-      - uses: JasmyLab-JANCTION/render-action@v1
+      - uses: JasmyLab-JANCTION/render-janction@v1
         with:
           api-key: ${{ secrets.JANCTION_RENDER_API_KEY }}
           scene-file: scenes/turntable.blend
